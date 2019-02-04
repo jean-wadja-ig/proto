@@ -6,7 +6,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -25,9 +24,7 @@ public class FixCluster {
     private String clusterName;
     private String description;
     private Integer port;
-    @OneToOne(fetch = FetchType.EAGER,
-            cascade = CascadeType.PERSIST)
-    @JoinColumn(name="FIX_FUNCTION_ID") 
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private FixFunction fixFunction;
     
     @SuppressWarnings("unused")
